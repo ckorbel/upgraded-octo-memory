@@ -1,0 +1,32 @@
+<div class='product-details'>
+  <section>
+    <h3>{{@name}}</h3>
+    <div>
+      <div class='flex justify-center'>
+        <i class='fas fa-star fa-sm text-yellow-500 mr-1'></i>
+        <i class='fas fa-star fa-sm text-yellow-500 mr-1'></i>
+        <i class='fas fa-star fa-sm text-yellow-500 mr-1'></i>
+        <i class='far fa-star fa-sm text-yellow-500 mr-1'></i>
+        <i class='far fa-star fa-sm text-yellow-500 mr-1'></i>
+      </div>
+    </div>
+  </section>
+  <section class={{unless @isDetails 'h4'}}>
+    <del class='small text'>${{@price.original}}</del>
+    <i class='text-danger font-weight-bold'>${{@price.current}}</i>
+  </section>
+
+  {{#if @isDetails}}
+    <div>
+      <h5>Color</h5>
+      <div class='product-colors active-{{@colorInfo}}'>
+        {{#each @colors as |colorInfo|}}
+          <span
+            class='product-color {{concat 'color-' colorInfo.color}}'
+            {{on 'click' (fn @onChangeColor color)}}
+          ></span>
+        {{/each}}
+      </div>
+    </div>
+  {{/if}}
+</div>

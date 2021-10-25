@@ -1,2 +1,30 @@
-{{page-title "Cart"}}
-{{outlet}}
+<main class='container'>
+  <h1>Shopping Cart</h1>
+  <nav
+    class='block text-sm text-left text-green-600 bg-green-500 bg-opacity-10 h-12 flex items-center p-4 rounded-md'
+    role='alert'
+  >
+    <ol class='list-reset flex text-grey-dark'>
+      <li class='mx-2'>
+        <LinkTo @route='index'>Home</LinkTo>
+      </li>/
+      <li class='mx-2'><LinkTo @route='index'>Shopping Cart</LinkTo></li>
+    </ol>
+  </nav>
+  <section class='flex justify-end cart-section'>
+    <div class='flex justify-between'>
+      <span class='price-item'>Subtotal</span>
+      <span class='grid-cols-1'>{{this.subTotal}}</span>
+    </div>
+    <div class='flex justify-between'>
+      <span class='col'>Tax</span>
+      <span class='col'>{{this.tax}}</span>
+    </div>
+    <div class='flex justify-between'>
+      <span class='col'>Total</span>
+      <span class='col'>{{this.total}}</span>
+    </div>
+
+  </section>
+  <button type='button'>Check Out</button>
+</main>
