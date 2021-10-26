@@ -14,15 +14,15 @@
   <section class='flex justify-end cart-section'>
     <div class='flex justify-between'>
       <span class='price-item'>Subtotal</span>
-      <span class='grid-cols-1'>{{this.subTotal}}</span>
+      <span class='grid-cols-1'>{{currency this.subTotal '~~'}}</span>
     </div>
     <div class='flex justify-between'>
       <span class='col'>Tax</span>
-      <span class='col'>{{this.tax}}</span>
+      <span class='col'>{{currency this.tax}}</span>
     </div>
     <div class='flex justify-between'>
       <span class='col'>Total</span>
-      <span class='col'>{{this.total}}</span>
+      <span class='col'>{{currency this.total}}</span>
     </div>
 
   </section>
